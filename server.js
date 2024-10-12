@@ -14,11 +14,21 @@ const app = express();
 
 
 //  app.use(cors(corsOptions));
-app.use('*',cors({
+// app.use('*',cors({
+//   origin: 'https://gymfrondend.vercel.app/', // Your frontend URL
+//   methods: ['GET', 'POST', 'PUT', 'DELETE','HEAD'],
+//   allowedHeaders: ['Content-Type', 'Authorization']
+// }));
+// CORS configuration
+const corsOptions = {
   origin: 'https://gymfrondend.vercel.app/', // Your frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE','HEAD'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'HEAD', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
+
+// Use CORS
+app.use(cors(corsOptions));
+app.options("*", cors()); // Enable preflight requests for all routes
 app.use(bodyParser.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
