@@ -15,19 +15,11 @@ const app = express();
 
 
 
- // Add CORS options to allow your frontend to access your backend
- const corsOptions = {
-   origin: 'https://gymfrondend.vercel.app', // Your frontend domain
-   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-   allowedHeaders: ['Content-Type', 'Authorization'],
-   credentials: true, // Allow cookies to be sent if needed
- };
- 
- // Use CORS middleware with options
- app.use(cors(corsOptions));
- 
- // Enable pre-flight requests for all routes (if needed)
- app.options('*', cors(corsOptions));
+ app.use('*',cors({
+  origin: 'https://gymfrondend.vercel.app', // Your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE','HEAD'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 
 
