@@ -21,10 +21,12 @@ const app = express();
 // }));
 // CORS configuration
 const corsOptions = {
-  origin: 'https://gymfrondend.vercel.app/', // Your frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'HEAD', 'OPTIONS'],
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
+app.use(cors(corsOptions));
+
 
 // Use CORS
 app.use(cors(corsOptions));
