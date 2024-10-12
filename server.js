@@ -7,7 +7,7 @@ const userRoutes = require("./routes/userRoutes");
 const customerRoutes=require("./routes/customerRoutes")
 
 
-const corsOptions = require("./config/cors");
+// const corsOptions = require("./config/cors");
 require("./config/createTables"); // Import and execute the table creation script
 const app = express();
  const port = 5000;
