@@ -13,12 +13,12 @@ const app = express();
  const port = 5000;
 
 
- app.use(cors(corsOptions));
-// app.use('*',cors({
-//   origin: 'https://smartbilling.myurbancommunity.com', // Your frontend URL
-//   methods: ['GET', 'POST', 'PUT', 'DELETE','HEAD'],
-//   allowedHeaders: ['Content-Type', 'Authorization']
-// }));
+//  app.use(cors(corsOptions));
+app.use('*',cors({
+  origin: 'https://gymfrondend.vercel.app/', // Your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE','HEAD'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(bodyParser.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
