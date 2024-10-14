@@ -126,3 +126,25 @@ exports.createCustomer = async (req, res) => {
       .json({ error: "Failed to process item", details: err.message });
   }
 };
+
+
+//get customer details
+exports.getAllCustomer = async (req, res) => {
+  const sql = "SELECT * FROM customertabele WHERE visibility = 1";
+
+  try {
+    const results = await new Promise((resolve, reject) => {
+      db.query(sql, (err, results) => {
+        if (err) {
+          return reject(err);
+        }
+        resolve(results);
+      });
+    });
+
+    res.status(200).json(results);
+  } catch (err) {
+    console.error("Database Error:", err);
+    res.status(500).json({ error: "Failed to retrieve products" });
+  }
+};
