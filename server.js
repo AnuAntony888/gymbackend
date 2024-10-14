@@ -16,7 +16,7 @@ const app = express();
 
 
  app.use('*',cors({
-  origin: 'https://gymfrondend.vercel.app', // Your frontend URL
+  origin: 'http://wellfithub.vedahamgroup.com/', // Your frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE','HEAD'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
