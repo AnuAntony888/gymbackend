@@ -15,13 +15,17 @@ const app = express();
 
 
 
- app.use('*',cors({
-  origin: 'http://wellfithub.vedahamgroup.com/', // Your frontend URL
+//  app.use('*',cors({
+//   origin: 'http://wellfithub.vedahamgroup.com/', // Your frontend URL
+//   methods: ['GET', 'POST', 'PUT', 'DELETE','HEAD'],
+//   allowedHeaders: ['Content-Type', 'Authorization']
+// }));
+
+app.use('*',cors({
+  origin: 'http://wellfithub.vedahamgroup.com', // Your frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE','HEAD'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
-
-
 
 // Enable preflight requests for all routes
 app.use(bodyParser.json());
