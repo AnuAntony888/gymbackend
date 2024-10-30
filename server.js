@@ -7,22 +7,26 @@ const userRoutes = require("./routes/userRoutes");
 const customerRoutes=require("./routes/customerRoutes")
 
 
-// const corsOptions = require("./config/cors");
+//  const corsOptions = require("./config/cors");
 require("./config/createTables"); // Import and execute the table creation script
 const app = express();
  const port = 5000;
 
+//  app.use(cors(corsOptions));
 
 
 
-//  app.use('*',cors({
-//   origin: 'http://wellfithub.vedahamgroup.com/', // Your frontend URL
+
+// app.use('*',cors({
+//   origin: '', // Your frontend URL
 //   methods: ['GET', 'POST', 'PUT', 'DELETE','HEAD'],
 //   allowedHeaders: ['Content-Type', 'Authorization']
 // }));
 
+
+
 app.use('*',cors({
-  origin: 'http://wellfithub.vedahamgroup.com', // Your frontend URL
+  origin: 'https://wellfithub.vedahamgroup.com', // Your frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE','HEAD'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
