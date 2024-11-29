@@ -178,6 +178,7 @@ exports.login = (req, res) => {
             userId: user.user_id,
             email: user.email,
             name: user.name,
+            Rolles:user.Rolles
           });
         } else {
           // Password mismatch
